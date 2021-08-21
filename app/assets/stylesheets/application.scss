@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.top-visual {
+  background-image: image-url('top-image.jpg');
+  width: auto;
+  height: 700px;
+  background-size: contain;
+  background-size: cover;
+  background-position: 0px 1100px;
+}
