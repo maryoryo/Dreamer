@@ -1,0 +1,40 @@
+<div class="header-bgc">
+  <%= render 'layouts/header' %>
+</div>
+<div class="container">
+  <div class="row justify-content-center my-4">
+    <div class="card col-6">
+      <div class="card-body">
+        <div class="card-text">
+          <div class="my-3">
+            タイトル：
+            <%= @schedule.title %>
+          </div>
+          <div class="my-3">
+            内容：
+            <%= @schedule.content %>
+          </div>
+          <div class="my-3">
+            開始時間：
+            <%= @schedule.start_time.strftime("%m月%d日 %H時%M分") %>
+          </div>
+          <div class="my-3">
+            終了時間：
+            <%= @schedule.finish_time.strftime("%m月%d日 %H時%M分") %>
+          </div>
+          <div class="row justify-content-center">
+            <div class="text-center my-2">
+              <%= link_to "更新する", edit_schedule_path, class:"btn btn-success col-4" %>
+            </div>
+            <div class="text-center my-2">
+              <%= link_to "削除する", schedule_path, method: :delete, class:"btn btn-danger col-4" %>
+            </div>
+            <div class="text-center my-2">
+              <%= link_to "戻る", schedules_month_index_path, class:"btn btn-secondary col-4" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

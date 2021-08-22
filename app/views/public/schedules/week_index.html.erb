@@ -1,0 +1,25 @@
+<div class="header-bgc">
+  <%= render 'layouts/header' %>
+</div>
+<div class="container">
+  <div class="row my-4">
+    <div class="text-start">
+      <%= link_to "予定を作成する", new_schedule_path, class:"btn btn-success" %>
+      <%#= link_to "", _path %>
+    </div>
+    <div class="text-end">
+      <%= link_to "月", schedules_month_index_path, class:"btn btn-primary text-white" %>
+      <%= link_to "週", schedules_week_index_path, class:"btn btn-primary text-white" %>
+    </div>
+  </div>
+
+  <%= week_calendar events: @schedules do |date, schedule| %>
+    <%= date.day %>
+    
+    <% schedule.each do |schedule| %>
+      <div>
+        <%= link_to schedule.title, schedule_path(schedule) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

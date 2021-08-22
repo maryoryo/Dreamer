@@ -63,8 +63,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'devise'
+gem 'devise-i18n'
+gem 'rails-i18n', '~> 5.1'
+gem 'cancancan'
+gem 'rails_admin'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'bootstrap', '~> 5.1.0'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
+gem "simple_calendar", "~> 2.4"

@@ -1,0 +1,29 @@
+<header>
+  <div class="container py-4">
+    <div class="row">
+      <div class="text-center">
+        <%= link_to "/" do %>
+          <%= image_tag 'dreamer-logo.png', :class => "logo", :alt => "dreamer", width: 200 %>
+        <% end %>
+      </div>
+    </div>
+    <div class="py-3">
+      <% if user_signed_in? %>
+        <ul class="nav nav-justified">
+        <li class="nav-item"><%= link_to "TOP", root_path %></li>
+        <li class="nav-item"><%= link_to "User", user_path(current_user) %></li>
+        <li class="nav-item"><%= link_to "Calendar", schedules_month_index_path %></li>
+        <li class="nav-item"><%= link_to "Log OUT", destroy_user_session_path, method: :delete %></li>
+      </ul>
+      <% else %>
+      <ul class="nav nav-justified">
+        <li class="nav-item"><%= link_to "TOP", root_path, class:"text-white" %></li>
+        <li class="nav-item"><%= link_to "About", homes_about_path, class:"text-white" %></li>
+        <li class="nav-item"><%= link_to "Sign IN", new_user_registration_path, class:"text-white" %></li>
+        <li class="nav-item"><%= link_to "Log IN", new_user_session_path, class:"text-white" %></li>
+      </ul>
+      <% end %>
+      
+    </div>
+  </div>
+</header>
