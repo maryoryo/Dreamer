@@ -2,24 +2,132 @@
   <%= render 'layouts/header' %>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-center my-3">
+    名前：<%= @user.name %>
+  </div>
+  <div class="row mt-4">
     <div class="card">
-      <div class="card-body">
+      <div class="card-title">
         <div class="card-text">
-          <div class="text-center">大目標</div>
-          <div>When</div>
-          <div>What</div>
+          <div class="text-center">
+            大目標
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <% @big_goal.each do |big_goal| %>
+          <div class="card-text">
+            <div>
+              内容</br>
+              <%= big_goal.big_goal_content %>
+            </div>
+            <div>
+              いつまで</br>
+              <%= big_goal.big_goal_when %>
+            </div>
+            <div>
+              具体的なアクション</br>
+              <%= big_goal.big_goal_action %>
+            </div>
+            <div>
+              <%= link_to "達成する理由", big_goal_path(big_goal), class:"btn btn-outline-primary" %>
+            </div>
+          </div>
+          <div class="text-end">
+            <%= link_to "大目標を更新する", edit_big_goal_path(big_goal) , class:"btn btn-secondary btn-sm" %>
+            <%= link_to "大目標を削除する", big_goal_path(big_goal), method: :delete, class:"btn btn-danger btn-sm" %>
+          </div>
+        <% end %>
+        <div class="text-end">
+          <% unless @big_goal.exists? %>  
+            <%= link_to "大目標を登録する", new_big_goal_path(@big_goal), class:"btn btn-success btn-sm" %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row my-4">
     <div class="card">
-      <div class="card-body">
+      <div class="card-title">
         <div class="card-text">
-          中目標：
+          <div class="text-center">
+            中目標
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <% @medium_goal.each do |medium_goal| %>
+          <div class="card-text"> 
+            <div>
+              内容</br>
+              <%= medium_goal.medium_goal_content %>
+            </div>
+            <div>
+              いつまで</br>
+              <%= medium_goal.medium_goal_when %>
+            </div>
+            <div>
+              具体的なアクション</br>
+              <%= medium_goal.medium_goal_action %>
+            </div>
+            <div>
+              <%= link_to "達成する理由", medium_goal_path(medium_goal), class:"btn btn-outline-primary" %>
+            </div>
+          </div> 
+          <div class="text-end">
+            <%= link_to "中目標を更新する", edit_medium_goal_path(medium_goal) , class:"btn btn-secondary btn-sm" %>
+            <%= link_to "中目標を削除する", medium_goal_path(medium_goal), method: :delete, class:"btn btn-danger btn-sm" %>
+          </div>
+        <% end %>
+        <div class="text-end">
+          <% unless @medium_goal.exists? %>  
+            <%= link_to "中目標を登録する", new_medium_goal_path(@medium_goal), class:"btn btn-success btn-sm" %>
+          <% end %>
         </div>
       </div>
     </div>
+  </div>
+  <div class="row my-4">
+    <div class="card">
+      <div class="card-title">
+        <div class="card-text">
+          <div class="text-center">
+            小目標
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <% @small_goal.each do |small_goal| %>
+          <div class="card-text">
+            <div>
+              内容</br>
+              <%= small_goal.small_goal_content %>
+            </div>
+            <div>
+              いつまで</br>
+              <%= small_goal.small_goal_when %>
+            </div>
+            <div>
+              具体的なアクション</br>
+              <%= small_goal.small_goal_action %>
+            </div>
+              <%= link_to "達成する理由", small_goal_path(small_goal), class:"btn btn-outline-primary" %>
+            </div>
+          </div>
+          <div class="text-end">
+            <%= link_to "小目標を更新する", edit_small_goal_path(small_goal) , class:"btn btn-secondary btn-sm" %>
+            <%= link_to "小目標を削除する", small_goal_path(small_goal), method: :delete, class:"btn btn-danger btn-sm" %>
+          </div>
+        <% end %>
+        <div class="text-end">
+          <% unless @small_goal.exists? %>  
+            <%= link_to "小目標を登録する", new_small_goal_path(@small_goal), class:"btn btn-success btn-sm" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="my-3 text-center">
+    <%= link_to "ユーザー情報を編集する", edit_user_path, class:"btn btn-success" %>
   </div>
 </div>

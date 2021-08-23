@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  big_goal_content: MyString
+  big_goal_why: MyText
+  big_goal_when: MyString
+  big_goal_action: MyText
+
+two:
+  user_id: 1
+  big_goal_content: MyString
+  big_goal_why: MyText
+  big_goal_when: MyString
+  big_goal_action: MyText

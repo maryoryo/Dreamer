@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_22_164617) do
+ActiveRecord::Schema.define(version: 2021_08_23_072638) do
+
+  create_table "big_goals", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "big_goal_content"
+    t.text "big_goal_why"
+    t.string "big_goal_when"
+    t.text "big_goal_action"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "medium_goal_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "medium_goal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["medium_goal_id"], name: "index_medium_goal_users_on_medium_goal_id"
+    t.index ["user_id"], name: "index_medium_goal_users_on_user_id"
+  end
+
+  create_table "medium_goals", force: :cascade do |t|
+    t.string "medium_goal_content"
+    t.text "medium_goal_why"
+    t.string "medium_goal_when"
+    t.text "medium_goal_action"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "schedules", force: :cascade do |t|
     t.integer "user_id"
@@ -18,6 +46,24 @@ ActiveRecord::Schema.define(version: 2021_08_22_164617) do
     t.text "content"
     t.datetime "start_time"
     t.datetime "finish_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "small_goal_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "small_goal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["small_goal_id"], name: "index_small_goal_users_on_small_goal_id"
+    t.index ["user_id"], name: "index_small_goal_users_on_user_id"
+  end
+
+  create_table "small_goals", force: :cascade do |t|
+    t.string "small_goal_content"
+    t.text "small_goal_why"
+    t.string "small_goal_when"
+    t.text "small_goal_action"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

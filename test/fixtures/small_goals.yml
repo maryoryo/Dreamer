@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  small_goal_content: MyString
+  small_goal_why: MyText
+  small_goal_when: MyString
+  small_goal_action: MyText
+
+two:
+  small_goal_content: MyString
+  small_goal_why: MyText
+  small_goal_when: MyString
+  small_goal_action: MyText

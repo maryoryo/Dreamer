@@ -1,0 +1,32 @@
+<div class="header-bgc">
+  <%= render 'layouts/header' %>
+</div>
+<div class="container">
+  <div class="row justify-content-center my-4">
+    <div class="card col-6">
+    <%= form_with model: @big_goal, url: big_goal_path(@big_goal), method: :patch, local: true do |f| %>
+      
+      <div class="form-field my-3">
+        <%= f.label :目標 %></br>
+        <%= f.text_field :big_goal_content, class:"form-control" %>
+      </div>
+      <div class="form-field my-3">
+        <%= f.label :いつまで %></br>
+        <%= f.text_field :big_goal_when, class:"form-control" %>
+      </div>
+      <div class="form-field my-3">
+        <%= f.label :設定した理由 %></br>
+        <%= f.text_area :big_goal_why, class:"form-control" %>
+      </div>
+      <div class="form-field my-3">
+        <%= f.label :具体的なアクション %></br>
+        <%= f.text_area :big_goal_action, class:"form-control" %>
+      </div>
+      <div class="submit my-3 text-center">
+        <%= f.submit "更新する", class:"btn btn-success" %>
+      </div>
+      
+    <% end %>
+    </div>
+  </div>
+</div>

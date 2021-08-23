@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  medium_goal_content: MyString
+  medium_goal_why: MyText
+  medium_goal_when: MyString
+  medium_goal_action: MyText
+
+two:
+  medium_goal_content: MyString
+  medium_goal_why: MyText
+  medium_goal_when: MyString
+  medium_goal_action: MyText

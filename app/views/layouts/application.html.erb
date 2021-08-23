@@ -10,7 +10,9 @@
   </head>
 
   <body>
-      
+    <div id="notice" class="bg-success text-center text-white"><%= notice %></div>
+    <div id="alert" class="bg-danger text-center text-white"><%= alert %></div>
+    
     <%= yield %>
   
     <%= render 'layouts/footer' %>

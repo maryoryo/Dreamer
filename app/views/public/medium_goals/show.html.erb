@@ -1,0 +1,29 @@
+<div class="header-bgc">
+  <%= render 'layouts/header' %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-text">
+          <div class="text-center">
+            中目標</br>
+            <%= @medium_goal.medium_goal_content %>
+          </div>
+          <div>
+            いつまで</br>
+            <%= @medium_goal.medium_goal_when %>
+          </div>
+          <div>
+            具体的なアクション</br>
+            <%= @medium_goal.medium_goal_action %>
+          </div>
+          <div class="my-3">
+            目標設定した理由<%= @medium_goal.medium_goal_why %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
