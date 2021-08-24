@@ -13,8 +13,11 @@ class Public::MediumGoalsController < ApplicationController
   end
   
   def create
+    # user = User.find(params[:user_id])
+    # user = User.find(current_user.id) 
     # medium_goal = MediumGoal.new(medium_goal_params)
-    medium_goal = current_user.medium_goals.new(medium_goal_params)
+    medium_goal = MediumGoal.new(medium_goal_params)
+    medium_goal.medium_goal_users.user_id = current_user.id
     # medium_goal.users = current_user.id
     # users.id = current_user.id
     # medium_goal.user_id = User.find(id: current_user.id)
