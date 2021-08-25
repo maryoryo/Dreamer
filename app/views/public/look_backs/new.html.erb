@@ -1,2 +1,36 @@
-<h1>Public::LookBacks#new</h1>
-<p>Find me in app/views/public/look_backs/new.html.erb</p>
+<div class="header-bgc">
+  <%= render 'layouts/header' %>
+</div>
+<div class="container">
+  <div class="row justify-content-center my-4">
+    <div class="card col-6">
+    <%= render 'layouts/errors', obj: @look_back %>
+    <%= form_with model: @look_back, url: look_backs_path, method: :post, local: true do |f| %>
+      
+      <div class="form-field my-3">
+        <%= f.label :記入日時 %></br>
+        <%= f.datetime_select :write_time, class:"form-control" %>
+      </div>
+      <div class="form-field my-3">
+        達成できたか</br>
+        <%= f.radio_button :achievement_check, :はい %>
+        <%= f.label :はい %></br>
+        <%= f.radio_button :achievement_check, :いいえ %>
+        <%= f.label :いいえ %></br>
+      </div>
+      <div class="form-field my-3">
+        <%= f.label :よかった点 %></br>
+        <%= f.text_area :good_thing, class:"form-control" %>
+      </div>
+      <div class="form-field my-3">
+        <%= f.label :反省点 %></br>
+        <%= f.text_area :bad_thing, class:"form-control" %>
+      </div>
+      <div class="submit my-3 text-center">
+        <%= f.submit "投稿する", class:"btn btn-success" %>
+      </div>
+      
+    <% end %>
+    </div>
+  </div>
+</div>

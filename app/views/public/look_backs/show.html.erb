@@ -1,2 +1,38 @@
-<h1>Public::LookBacks#show</h1>
-<p>Find me in app/views/public/look_backs/show.html.erb</p>
+<div class="header-bgc">
+  <%= render 'layouts/header' %>
+</div>
+<div class="container">
+  <div class="row justify-content-center my-4">
+    <div class="card col-6">
+      <div class="card-body">
+        <div class="card-text">
+          <div class="text-center">
+            <h3>振り返り</h3>
+          </div>
+          <div class="my-3">
+            記入日時：</br>
+            <%= @look_back.write_time.strftime("%m月 %d日 %H:%M") %>
+          </div>
+          <div class="my-3">
+            達成できたか：</br>
+            <%= @look_back.achievement_check %>
+          </div>
+          <div class="my-3">
+            よかった点：</br>
+            <%= @look_back.good_thing %>
+          </div>
+          <div class="my-3">
+            反省点：</br>
+            <%= @look_back.bad_thing %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="text-center mb-4">
+      <%= link_to "編集する", edit_look_back_path, class:"btn btn-secondary" %>
+      <%= link_to "削除する", look_back_path, method: :delete, class:"btn btn-danger" %>
+    </div>
+  </div>
+</div>

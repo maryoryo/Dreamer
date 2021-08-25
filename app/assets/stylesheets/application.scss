@@ -30,9 +30,20 @@
   background-image: image-url('top-image-new.jpg');
   width: auto;
   height: 1000px;
-  // background-size: contain;
-  // background-size: cover;
-  // background-position: 0px 1100px;
+}
+
+.about-visual {
+  background-image: image-url('top-image.jpg');
+  height: 1000px;
+  background-size: cover;
+  background-position: 0px 1100px;
+  
+}
+
+.about-text {
+  // color: white;
+  background-color: rgba(255, 255, 255, 0.9);
+  
 }
 
 .header-bgc {
@@ -55,10 +66,15 @@
 h2 {
   font-style: italic;
   font-weight: bolder;
+  font-size: 40px;
   font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体',sans-serif;
 }
 
 footer {
   background-color: #dcdcdc;
+}
+
+.cal-hov:hover {
+  background-color: black;
 }
 

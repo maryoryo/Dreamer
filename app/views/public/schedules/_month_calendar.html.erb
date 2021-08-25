@@ -8,7 +8,7 @@
   <% end %>
   <% current_user.look_backs.where(write_time: date.all_day).each do |look_back| %>
     <div>
-      <%= link_to "反省", look_back_path(look_back) %>
+      <%= link_to " 振り返り", look_back_path(look_back), class:"btn btn-dark btn-sm" %>
     </div>
   <% end %>
 
