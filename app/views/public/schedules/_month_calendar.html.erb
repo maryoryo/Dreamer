@@ -1,0 +1,15 @@
+<%= month_calendar do |date| %>
+  <%= date.day %>
+  <%#= link_to "振り返り", look_back_path(@look_back) %>
+  <% current_user.schedules.where(start_time: date.all_day).each do |schedule| %>
+    <div>
+      <%= link_to schedule.title, schedule_path(schedule) %>
+    </div>
+  <% end %>
+  <% current_user.look_backs.where(write_time: date.all_day).each do |look_back| %>
+    <div>
+      <%= link_to "反省", look_back_path(look_back) %>
+    </div>
+  <% end %>
+
+<% end %>

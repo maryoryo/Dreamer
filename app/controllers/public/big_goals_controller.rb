@@ -13,9 +13,9 @@ class Public::BigGoalsController < ApplicationController
   end
   
   def create
-    big_goal = BigGoal.new(big_goal_params)
-    big_goal.user_id = current_user.id
-    if big_goal.save
+    @big_goal = BigGoal.new(big_goal_params)
+    @big_goal.user_id = current_user.id
+    if @big_goal.save
       redirect_to user_path(current_user.id), notice:"大目標を作成しました"
     else
       render :new
@@ -28,9 +28,9 @@ class Public::BigGoalsController < ApplicationController
   end
   
   def update
-    big_goal = BigGoal.find(params[:id])
-    big_goal.user_id = current_user.id
-    if big_goal.update(big_goal_params)
+    @big_goal = BigGoal.find(params[:id])
+    @big_goal.user_id = current_user.id
+    if @big_goal.update(big_goal_params)
       redirect_to user_path(current_user.id), notice:"大目標を更新しました"
     else
       render :edit

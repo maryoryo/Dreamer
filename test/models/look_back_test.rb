@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SmallGoalUserTest < ActiveSupport::TestCase
+class LookBackTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

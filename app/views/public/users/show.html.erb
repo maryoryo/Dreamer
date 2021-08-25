@@ -79,10 +79,8 @@
             <%= link_to "中目標を削除する", medium_goal_path(medium_goal), method: :delete, class:"btn btn-danger btn-sm" %>
           </div>
         <% end %>
-        <div class="text-end">
-          <% unless @medium_goal.exists? %>  
-            <%= link_to "中目標を登録する", new_medium_goal_path(@medium_goal), class:"btn btn-success btn-sm" %>
-          <% end %>
+        <div class="text-center my-4">
+          <%= link_to "中目標を登録する", new_medium_goal_path(@medium_goal), class:"btn btn-success btn-sm" %>
         </div>
       </div>
     </div>
@@ -111,6 +109,7 @@
               具体的なアクション</br>
               <%= small_goal.small_goal_action %>
             </div>
+            <div>
               <%= link_to "達成する理由", small_goal_path(small_goal), class:"btn btn-outline-primary" %>
             </div>
           </div>
@@ -119,10 +118,8 @@
             <%= link_to "小目標を削除する", small_goal_path(small_goal), method: :delete, class:"btn btn-danger btn-sm" %>
           </div>
         <% end %>
-        <div class="text-end">
-          <% unless @small_goal.exists? %>  
-            <%= link_to "小目標を登録する", new_small_goal_path(@small_goal), class:"btn btn-success btn-sm" %>
-          <% end %>
+        <div class="text-center my-4">
+          <%= link_to "小目標を登録する", new_small_goal_path(@small_goal), class:"btn btn-success btn-sm" %>
         </div>
       </div>
     </div>

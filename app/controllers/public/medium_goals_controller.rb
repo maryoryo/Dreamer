@@ -13,15 +13,9 @@ class Public::MediumGoalsController < ApplicationController
   end
   
   def create
-    # user = User.find(params[:user_id])
-    # user = User.find(current_user.id) 
-    # medium_goal = MediumGoal.new(medium_goal_params)
-    medium_goal = MediumGoal.new(medium_goal_params)
-    medium_goal.medium_goal_users.user_id = current_user.id
-    # medium_goal.users = current_user.id
-    # users.id = current_user.id
-    # medium_goal.user_id = User.find(id: current_user.id)
-    if medium_goal.save
+    @medium_goal = MediumGoal.new(medium_goal_params)
+    @medium_goal.user_id = current_user.id
+    if @medium_goal.save
       redirect_to user_path(current_user.id), notice:"中目標を作成しました"
     else
       render :new
@@ -34,9 +28,9 @@ class Public::MediumGoalsController < ApplicationController
   end
   
   def update
-    medium_goal = MediumGoal.find(params[:id])
-    medium_goal.user_id = current_user.id
-    if medium_goal.update(medium_goal_params)
+    @medium_goal = MediumGoal.find(params[:id])
+    @medium_goal.user_id = current_user.id
+    if @medium_goal.update(medium_goal_params)
       redirect_to user_path(current_user.id), notice:"中目標を更新しました"
     else
       render :edit

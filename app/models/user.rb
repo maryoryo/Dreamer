@@ -3,18 +3,18 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
+
   attachment :image, destroy: false
-  
+
   has_many :schedules, dependent: :destroy
-  
+
   has_many :big_goals, dependent: :destroy
-  
-  has_many :medium_goal_users, dependent: :destroy
-  has_many :medium_goals, through: :medium_goal_users
-  
-  has_many :small_goal_users, dependent: :destroy
-  has_many :small_goals, through: :small_goal_users
-  
+
+  has_many :medium_goals, dependent: :destroy
+
+  has_many :small_goals, dependent: :destroy
+
+  has_many :look_backs, dependent: :destroy
+
   validates :name, presence: true
 end

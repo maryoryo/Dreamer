@@ -13,13 +13,9 @@
     </div>
   </div>
 
-  <%= month_calendar events: @schedules do |date, schedule| %>
-    <%= date.day %>
-  
-    <% schedule.each do |schedule| %>
-      <div>
-        <%= link_to schedule.title, schedule_path(schedule) %>
-      </div>
-    <% end %>
-  <% end %>
+  <div id="events_calendar">
+    <%#= render partial: "month_calendar", locals: {schedules: @schedules} %>
+    <%= render 'public/schedules/month_calendar', schedules: @schedules, look_backs: @look_backs %>
+  </div>
+
 </div>
