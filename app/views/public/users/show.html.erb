@@ -5,28 +5,26 @@
   <div class="row justify-content-center my-3">
     名前：<%= @user.name %>
   </div>
-  <div class="row mt-4">
-    <div class="card">
+  <div class="row justify-content-center mt-4">
+    <div class="card col-8">
       <div class="card-title">
         <div class="card-text">
           <div class="text-center">
-            大目標
+            <h3 class="mt-3">大目標</h3>
           </div>
         </div>
       </div>
       <div class="card-body">
         <% @big_goal.each do |big_goal| %>
           <div class="card-text">
-            <div>
-              内容</br>
-              <%= big_goal.big_goal_content %>
+            <div class="d-flex">
+              目標：<h4><%= big_goal.big_goal_content %></h4>
+            </div>
+            <div class="d-flex">
+              いつまで：<h4><%= big_goal.big_goal_when %></h4>
             </div>
             <div>
-              いつまで</br>
-              <%= big_goal.big_goal_when %>
-            </div>
-            <div>
-              具体的なアクション</br>
+              具体的なアクション：</br>
               <%= big_goal.big_goal_action %>
             </div>
             <div>
@@ -34,37 +32,37 @@
             </div>
           </div>
           <div class="text-end">
-            <%= link_to "大目標を更新する", edit_big_goal_path(big_goal) , class:"btn btn-secondary btn-sm" %>
+            <%= link_to "大目標を編集する", edit_big_goal_path(big_goal) , class:"btn btn-secondary btn-sm" %>
             <%= link_to "大目標を削除する", big_goal_path(big_goal), method: :delete, class:"btn btn-danger btn-sm" %>
           </div>
         <% end %>
-        <div class="text-end">
+        <div class="text-center my-4">
           <% unless @big_goal.exists? %>  
             <%= link_to "大目標を登録する", new_big_goal_path(@big_goal), class:"btn btn-success btn-sm" %>
+          <% else %>
+            大目標は1つのみ作成できます
           <% end %>
         </div>
       </div>
     </div>
   </div>
-  <div class="row my-4">
-    <div class="card">
+  <div class="row justify-content-center my-4">
+    <div class="card col-8">
       <div class="card-title">
         <div class="card-text">
           <div class="text-center">
-            中目標
+            <h3 class="mt-3">中目標</h3>
           </div>
         </div>
       </div>
       <div class="card-body">
         <% @medium_goal.each do |medium_goal| %>
           <div class="card-text"> 
-            <div>
-              内容</br>
-              <%= medium_goal.medium_goal_content %>
+            <div class="d-flex">
+              目標：<h4><%= medium_goal.medium_goal_content %></h4>
             </div>
-            <div>
-              いつまで</br>
-              <%= medium_goal.medium_goal_when %>
+            <div class="d-flex">
+              いつまで：<h4><%= medium_goal.medium_goal_when %></h4>
             </div>
             <div>
               具体的なアクション</br>
@@ -75,7 +73,7 @@
             </div>
           </div> 
           <div class="text-end">
-            <%= link_to "中目標を更新する", edit_medium_goal_path(medium_goal) , class:"btn btn-secondary btn-sm" %>
+            <%= link_to "中目標を編集する", edit_medium_goal_path(medium_goal) , class:"btn btn-secondary btn-sm" %>
             <%= link_to "中目標を削除する", medium_goal_path(medium_goal), method: :delete, class:"btn btn-danger btn-sm" %>
           </div>
         <% end %>
@@ -85,25 +83,23 @@
       </div>
     </div>
   </div>
-  <div class="row my-4">
-    <div class="card">
+  <div class="row justify-content-center my-4">
+    <div class="card col-8">
       <div class="card-title">
         <div class="card-text">
           <div class="text-center">
-            小目標
+            <h3 class="mt-3">小目標</h3>
           </div>
         </div>
       </div>
       <div class="card-body">
         <% @small_goal.each do |small_goal| %>
           <div class="card-text">
-            <div>
-              内容</br>
-              <%= small_goal.small_goal_content %>
+            <div class="d-flex">
+              目標：<h4><%= small_goal.small_goal_content %></h4>
             </div>
-            <div>
-              いつまで</br>
-              <%= small_goal.small_goal_when %>
+            <div class="d-flex">
+              いつまで：<h4><%= small_goal.small_goal_when %></h4>
             </div>
             <div>
               具体的なアクション</br>
@@ -114,7 +110,7 @@
             </div>
           </div>
           <div class="text-end">
-            <%= link_to "小目標を更新する", edit_small_goal_path(small_goal) , class:"btn btn-secondary btn-sm" %>
+            <%= link_to "小目標を編集する", edit_small_goal_path(small_goal) , class:"btn btn-secondary btn-sm" %>
             <%= link_to "小目標を削除する", small_goal_path(small_goal), method: :delete, class:"btn btn-danger btn-sm" %>
           </div>
         <% end %>
@@ -124,7 +120,7 @@
       </div>
     </div>
   </div>
-  <div class="my-3 text-center">
+  <div class="my-5 text-center">
     <%= link_to "ユーザー情報を編集する", edit_user_path, class:"btn btn-success" %>
   </div>
 </div>

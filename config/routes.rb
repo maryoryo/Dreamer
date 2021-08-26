@@ -11,7 +11,9 @@ Rails.application.routes.draw do
       registrations: 'public/users/registrations'
   }
     scope module: :public do
-      resources :users, only: [:index, :show, :edit, :update]
+      resources :users, only: [:index, :show, :edit, :update] do
+        get 'users/withdrawal' => 'users#withdrawal'
+      end
       get 'schedules/month_index' => 'schedules#month_index'
       get 'schedules/week_index' => 'schedules#week_index'
       resources :schedules, except: [:index]

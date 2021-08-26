@@ -7,23 +7,30 @@
         <% end %>
       </div>
     </div>
-    <div class="py-3">
+    
+    <div id="sp-menu" class="py-3">
       <% if user_signed_in? %>
-        <ul class="nav nav-justified">
+      <ul class="nav nav-justified">
         <li class="nav-item"><%= link_to "TOP", root_path, class:"nav-text" %></li>
         <li class="nav-item"><%= link_to "User", user_path(current_user), class:"nav-text" %></li>
         <li class="nav-item"><%= link_to "Calendar", schedules_month_index_path, class:"nav-text" %></li>
-        <li class="nav-item"><%= link_to "Log OUT", destroy_user_session_path, method: :delete, class:"nav-text" %></li>
+        <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete, class:"nav-text" %></li>
       </ul>
       <% else %>
       <ul class="nav nav-justified">
         <li class="nav-item"><%= link_to "TOP", root_path, class:"nav-text" %></li>
         <li class="nav-item"><%= link_to "About", homes_about_path, class:"nav-text" %></li>
-        <li class="nav-item"><%= link_to "Sign IN", new_user_registration_path, class:"nav-text" %></li>
-        <li class="nav-item"><%= link_to "Log IN", new_user_session_path, class:"nav-text" %></li>
+        <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class:"nav-text" %></li>
+        <li class="nav-item"><%= link_to "Log in", new_user_session_path, class:"nav-text" %></li>
       </ul>
       <% end %>
-      
+    </div>
+    <div id="hm-icon">
+      <a class="menu-trigger" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
     </div>
   </div>
 </header>

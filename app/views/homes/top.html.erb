@@ -1,32 +1,19 @@
 <div class="top-visual">
   <%= render 'layouts/header' %>
-  <div class="container col-7">
-      <!--<div class="row justify-content-end">-->
-      <!--    <div class="card">-->
-      <!--        <div class="card-body">-->
-      <!--            <div class="card-text">-->
-      <!--                ああああああああ-->
-      <!--                <%#= link_to "概要へ", homes_about_path %>-->
-      <!--            </div>-->
-      <!--        </div>-->
-      <!--    </div>-->
-      <!--</div>-->
-      <div class="row py-5">
-        <div class="text-center">
-          <h2>～さあ、始めましょう～</h2>
-          <div class="col-md-3 mx-auto">
-            <div class="py-2">
-              <%= link_to "About", homes_about_path, class:"btn btn-info text-white" %>
-            </div>
-          </div>
+  <div class="container col-sm-7">
+    <div class="row pt-5">
+      <div class="text-center">
+        <div class="top-text">～さあ、始めましょう～</div>
+        <div class="col-sm-6 col-5 mx-auto my-4">
+          <% unless user_signed_in? %>
+            <div class="pb-3"><%= link_to "新規登録", new_user_registration_path, class:"btn btn-success form-control" %></div>
+            <div class="pb-3"><%= link_to "ログイン", new_user_session_path, class:"btn btn-primary form-control" %></div>
+          <% end %>
         </div>
       </div>
-      <div class="col-md-6 mx-auto">
-        <% unless user_signed_in? %>
-          <div class="pb-3"><%= link_to "新規登録", new_user_registration_path, class:"btn btn-success form-control" %></div>
-          <div class="pb-3"><%= link_to "ログイン", new_user_session_path, class:"btn btn-primary form-control" %></div>
-        <% end %>
-      </div>
+    </div>
+    <div class="row justify-content-center">
+      <%= link_to "Dreamerとは", homes_about_path, class:"btn btn-info text-white col-sm-4 col-5 my-4" %>
     </div>
   </div>
 </div>

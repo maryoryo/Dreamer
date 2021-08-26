@@ -2,24 +2,25 @@
   <%= render 'layouts/header' %>
 </div>
 <div class="container">
-  <div class="row">
-    <div class="card">
+  <div class="row justify-content-center my-4">
+    <div class="card col-8">
       <div class="card-body">
         <div class="card-text">
           <div class="text-center">
-            大目標</br>
-            <%= @big_goal.big_goal_content %>
+            <h5>大目標</h5>
+            <h2><%= @big_goal.big_goal_content %></h2>
           </div>
-          <div>
-            いつまで</br>
-            <%= @big_goal.big_goal_when %>
+          <div class="d-flex">
+            いつまで：
+            <h4><%= @big_goal.big_goal_when %></h4>
           </div>
           <div>
             具体的なアクション</br>
             <%= @big_goal.big_goal_action %>
           </div>
           <div class="my-3">
-            目標設定した理由<%= @big_goal.big_goal_why %>
+            目標設定した理由</br>
+            <%= @big_goal.big_goal_why %>
           </div>
         </div>
       </div>
