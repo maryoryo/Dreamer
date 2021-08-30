@@ -78,3 +78,13 @@ document.addEventListener("turbolinks:load", function () {
     });
   });
 })
+
+
+function hm-icon() {
+  document.getElementById('box').classList.toggle('back'); // 追加
+};
+
+document.getElementById('box').addEventListener('click',function(){
+  hamburger();
+});
+
