@@ -19,54 +19,7 @@
 //= require_tree .
 
 
-// function hamburger() {
-//   document.getElementById('line1').classList.toggle('line_1');
-//   document.getElementById('line2').classList.toggle('line_2');
-//   document.getElementById('line3').classList.toggle('line_3');
-//   document.getElementById('nav').classList.toggle('in');
-// }
-// document.getElementById('hamburger').addEventListener('click' , function () {
-//   hamburger();
-// } );
-
-
-// $(function() {
-//   $('.menu-trigger').on('click', function(event) {
-//     $(this).toggleClass('active');
-//     $('#sp-menu').fadeToggle();
-//     event.preventDefault();
-//   });
-// });
-
-
 'use strict';
-
-// {
-//   const open = document.getElementById('open');
-//   const overlay = document.querySelector('.overlay');
-
-//   open.addEventListener('click', () => {
-//     overlay.classList.add('show');
-//     open.classList.add('hide');
-//   });
-// }
-
-
-// {
-//   const open = document.getElementById('open');
-//   const overlay = document.querySelector('.overlay');
-//   const close = document.getElementById('close');
-
-//   open.addEventListener("turbolinks:load", 'click', () => {
-//     overlay.classList.add('show');
-//     open.classList.add('hide');
-//   });
-
-//   close.addEventListener("turbolinks:load", 'click', () => {
-//     overlay.classList.remove('show');
-//     open.classList.remove('hide');
-//   });
-// }
 
 
 document.addEventListener("turbolinks:load", function () {
@@ -76,15 +29,25 @@ document.addEventListener("turbolinks:load", function () {
       $('#sp-menu').fadeToggle();
       event.preventDefault();
     });
+    $('#mainfield').click(function() {
+      if ($('.menu-trigger').hasClass('active')) {
+        $('.menu-trigger').toggleClass('active');
+        $('#sp-menu').fadeToggle();
+      }
+    });
+    
   });
-})
-
-
-function hm-icon() {
-  document.getElementById('box').classList.toggle('back'); // 追加
-};
-
-document.getElementById('box').addEventListener('click',function(){
-  hamburger();
 });
+
+
+
+// document.addEventListener('click', (e) => {
+//   if(!e.target.closest('#sp-menu')) {
+//     if ($('.menu-trigger').hasClass('active')) {
+//       $('.menu-trigger').toggleClass('active');
+//       $('#sp-menu').fadeToggle();
+//     }
+//   } 
+// });
+
 
