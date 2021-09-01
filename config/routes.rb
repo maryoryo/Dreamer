@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         get 'users/withdrawal' => 'users#withdrawal'
       end
       get 'schedules/month_index' => 'schedules#month_index'
-      get 'schedules/week_index' => 'schedules#week_index'
+      # get 'schedules/week_index' => 'schedules#week_index'
       resources :schedules, except: [:index]
       resources :big_goals, except: [:index]
       resources :medium_goals, except: [:index]

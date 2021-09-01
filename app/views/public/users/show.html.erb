@@ -6,7 +6,7 @@
     名前：<%= @user.name %>
   </div>
   <div class="row justify-content-center mt-4">
-    <div class="card col-8">
+    <div class="card col-md-8 col-9">
       <div class="card-title">
         <div class="card-text">
           <div class="text-center">
@@ -28,12 +28,12 @@
               <%= big_goal.big_goal_action %>
             </div>
             <div>
-              <%= link_to "達成する理由", big_goal_path(big_goal), class:"btn btn-outline-primary" %>
+              <%= link_to "達成する理由", big_goal_path(big_goal), class:"btn btn-outline-primary mt-2" %>
             </div>
           </div>
           <div class="text-end">
-            <%= link_to "大目標を編集する", edit_big_goal_path(big_goal) , class:"btn btn-secondary btn-sm" %>
-            <%= link_to "大目標を削除する", big_goal_path(big_goal), method: :delete, class:"btn btn-danger btn-sm" %>
+            <%= link_to "大目標を編集する", edit_big_goal_path(big_goal) , class:"btn btn-secondary btn-sm mt-2" %>
+            <%= link_to "大目標を削除する", big_goal_path(big_goal), method: :delete, "data-confirm" => "本当に削除しますか？", class:"btn btn-danger btn-sm mt-2" %>
           </div>
         <% end %>
         <div class="text-center my-4">
@@ -47,7 +47,7 @@
     </div>
   </div>
   <div class="row justify-content-center my-4">
-    <div class="card col-8">
+    <div class="card col-md-8 col-9">
       <div class="card-title">
         <div class="card-text">
           <div class="text-center">
@@ -69,12 +69,12 @@
               <%= medium_goal.medium_goal_action %>
             </div>
             <div>
-              <%= link_to "達成する理由", medium_goal_path(medium_goal), class:"btn btn-outline-primary" %>
+              <%= link_to "達成する理由", medium_goal_path(medium_goal), class:"btn btn-outline-primary mt-2" %>
             </div>
           </div> 
           <div class="text-end">
-            <%= link_to "中目標を編集する", edit_medium_goal_path(medium_goal) , class:"btn btn-secondary btn-sm" %>
-            <%= link_to "中目標を削除する", medium_goal_path(medium_goal), method: :delete, class:"btn btn-danger btn-sm" %>
+            <%= link_to "中目標を編集する", edit_medium_goal_path(medium_goal) , class:"btn btn-secondary btn-sm mt-2" %>
+            <%= link_to "中目標を削除する", medium_goal_path(medium_goal), method: :delete, "data-confirm" => "本当に削除しますか？", class:"btn btn-danger btn-sm mt-2" %>
           </div>
         <% end %>
         <div class="text-center my-4">
@@ -84,7 +84,7 @@
     </div>
   </div>
   <div class="row justify-content-center my-4">
-    <div class="card col-8">
+    <div class="card col-md-8 col-9">
       <div class="card-title">
         <div class="card-text">
           <div class="text-center">
@@ -106,12 +106,12 @@
               <%= small_goal.small_goal_action %>
             </div>
             <div>
-              <%= link_to "達成する理由", small_goal_path(small_goal), class:"btn btn-outline-primary" %>
+              <%= link_to "達成する理由", small_goal_path(small_goal), class:"btn btn-outline-primary mt-2" %>
             </div>
           </div>
           <div class="text-end">
-            <%= link_to "小目標を編集する", edit_small_goal_path(small_goal) , class:"btn btn-secondary btn-sm" %>
-            <%= link_to "小目標を削除する", small_goal_path(small_goal), method: :delete, class:"btn btn-danger btn-sm" %>
+            <%= link_to "小目標を編集する", edit_small_goal_path(small_goal) , class:"btn btn-secondary btn-sm mt-2" %>
+            <%= link_to "小目標を削除する", small_goal_path(small_goal), method: :delete, "data-confirm" => "本当に削除しますか？", class:"btn btn-danger btn-sm mt-2" %>
           </div>
         <% end %>
         <div class="text-center my-4">

@@ -5,14 +5,8 @@ class Public::SchedulesController < ApplicationController
   def month_index
     @schedules = Schedule.all
     @look_backs = LookBack.all
-    # @look_back = LookBack.find(params[:id])
   end
   
-  def week_index
-    @schedules = Schedule.all
-    # @look_backs = LookBack.all
-  end
-
   def show
     @schedule = Schedule.find(params[:id])
   end
