@@ -3,8 +3,6 @@ class Public::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update]
   
-  def index
-  end
 
   def show
     @user = User.find(params[:id])
@@ -27,7 +25,6 @@ class Public::UsersController < ApplicationController
   end
   
   def withdrawal
-    
   end
   
   private

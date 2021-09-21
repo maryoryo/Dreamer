@@ -3,6 +3,7 @@
 class Ability
   include CanCan::Ability
 
+  # 管理者権限
   def initialize(user)
     if user && user.admin_flg?
       can :access, :rails_admin
